@@ -23,9 +23,6 @@ csvWriter = csv.writer(csvFile)
 def process_info(screen_name, followers_count, tweet_count):
     # get people screen name
     for myFollowings in api.get_friends(screen_name=screen_name, count=followers_count):
-
-        allCurrentScreenNameHashTags = []
-
         # get user info
         try:
             userJson = api.get_user(screen_name=screen_name)._json
